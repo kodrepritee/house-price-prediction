@@ -12,9 +12,10 @@ This guide will help you set up and run the House Price Prediction app using Pyt
 1. **Clone the repository**
 
     ```sh
-    git clone https://github.com/yourusername/house-price-prediction.git
+    git clone https://github.com/kodrepritee/house-price-prediction.git
     cd house-price-prediction
     ```
+
 
 2. **Create a virtual environment**
 
