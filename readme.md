@@ -46,6 +46,3 @@ This guide will help you set up and run the House Price Prediction app using Pyt
 1. Once the application is running, go to `http://127.0.0.1:5000/` or `http://localhost:5000/` 
 2. Give your input and select location and click **predict**
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
