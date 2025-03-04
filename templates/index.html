@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>House Price Prediction</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .form-container {
+            background: #fff;
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        .form-container label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-container input,
+        .form-container select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #4CAF50;
+            color: #fff;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #45a049;
+        }
+        .predicted-price {
+            margin-top: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>House Price Prediction</h1>
+    <div class="form-container">
+        <form method="POST">
+            <label>Bedrooms:</label>
+            <input type="number" name="bedrooms" step="any" required>
+            
+            <label>Bathrooms:</label>
+            <input type="number" name="bathrooms" step="any" required>
+            
+            <label>Square Feet:</label>
+            <input type="number" name="sqft" required>
+            
+            <label>Location:</label>
+            <select name="location" required>
+                {% for loc in locations %}
+                    <option value="{{ loc }}">{{ loc }}</option>
+                {% endfor %}
+            </select>
+            
+            <button type="submit">Predict Price</button>
+            {% if predicted_price %}
+            <h2 class="predicted-price">Predicted House Price: ${{ predicted_price }}</h2>
+            {% endif %}
+        </form>
+    </div>
+</body>
+
+</html>
